@@ -1,0 +1,113 @@
+\chapter{Teori}
+I det følgende kapitel er en kort beskrivelse af 3D scanning - Struktureret Lys, og de principper metoden anvender. Sidst i kapitlet er der en kort introduktion til  Archimedes princip. 
+
+\section{Fotogrammetri - struktureret lys}
+3D-billedbehandling referer til teknikker som giver reel 3D data af et objekt. Der findes flere metoder som kan dette, valget af metode er afhængig af hvilken data der ønskes. Struktureret lys metoden er en metode der anvender en projektor samt et eller flere kameraer, hvor projektøren sender et struktureret lys på det emnet der ønskes information om. Metoden samler data om emnets overflade, hvilket kan andvendes til flere formål, som f.eks. volumenberegning og 3D printing. I denne rapport bliver struktureret lys andvendt til at lave volumenberegninger på permafrostkerner.
+% Struktureret lys er en form for overfladeafbildning af et objekt, hvor punkter på objektets overflade bliver illustreret i et koordinatsystem (x,y,z).
+% Hvor z-koordinaterne er en fuktion af (x,y) koordinaterne i et kartesiske koordinatsystem, og kan udtrykkes i matrice form som:
+% ${z_{ij}=(x_i,y_j,)i=1,2...,L,j=1,2...,M}$.
+Ved 3D-billedbehandlings system er det muligt at erhverve en skalar-værdi som en reflekterende overflade, associeret med et punkt på den ikke-plane overflade, hvilket resulterer i en punkt-sky der beskrives ved: $P_i=(x_i,y_i,z_i,f_i),i=1,2...,N$, hvor $f_i$ repræsenterer værdien af overfladepunktet i, i data sættet. Ligeledes repræsenteres farver ved: $P_i=(x_i,y_i,z_i,r_i,g_i,b_i),i=1,2...,N$, hvor vektorene $r_i$,$g_i$ og $b_i$ repræsenterer farvene illustreret på figur \vref{fig:opst_strukt_lys} (rød, grøn og blå), i det givne overfladepunkt (i). 
+Ved struktureret lys metoden belyses et objektet med et specielt designet 2D rumligt varierende mønster, som vist på figur \vref{fig:opst_strukt_lys}, hvor den rumligt varierende 2D struktureret belysning genereret af en projektor designet til det formål, eller en anden lyskilde moduleret af en rumlig lysmodulator (Geng,2011).
+
+Intensiteten af hvert piksel på det strukturerede lys-mønster er repræsenteret av et digitalt signal: $I_{ij}=(i,j),i=1,2,...,I,j=1,2,...,J$, hvor (i,j) repræsenterer (x,y) koordinaterne til det projekterende mønster.
+En billede sensor som f.eks. et kamera anvendes til at optage 2D bilede af det strukturerede lys. Hvis det er tale om en plan overflade uden 3D variation, er det strukturede mønster fanget af kamera ens med det projekterende lys. Hvis der er tale om et rumlig objekt, vil overfladen af objektet forvrænge det projekterende lys, der fanges af kameraet. Princippet ved strukturered lys 3D billedbehandlingssytem er at indsamle 3D information fra det forvrængede lys.Geometrienaf objektet kalkuleres ved brug af struktureret lys principper og algoritmer. Ved brug af triangulering kan det geometriske forhold mellem bildesensoren (kamera), projektor og hvert enkelt punktet på objektets overflade, se figur \vref{fig:opst_strukt_lys}, kan udtrykkes ved formel: \vref{eq:triangulering_kam} (Geng,2011). 
+
+%
+\begin{equation}
+R=B*\frac{sin(\theta)}{sin(\alpha+\theta)}
+\label{eq:triangulering_kam}
+\end{equation}
+%
+
+
+%Struktureret lys skanning, er en form for fotogrammetri som er en alsidig metode til at opnåelse af 3D form. Almindelige kameraer kan kun optage 2D, da de mangler dybde information. Ved struktureret lys metoden, anvendes der samtidig en projektor der lægger et mønster over det objekt der ønsker information om.  
+
+\begin{figure}
+\centering
+\includegraphics[width=0.6\textwidth]{Unavngivet}
+\caption{Opstilling-struktureret lys (Geng,2011).}
+\label{fig:opst_strukt_lys}
+\end{figure}
+  
+
+% %
+% \begin{figure}
+% \centering
+% \input{veske_dens}
+% \caption{Nedsænkning af et legeme i en væske}
+% \label{fig:arki_ops_veske_teori}
+% \end{figure}
+% %
+
+\section{Opdrift og Archimedes princip}
+Archimedes princip omhandler kræfters påvirkning af et legeme ned-sænket i en væske. Et legeme nedsænket i væske påvirkes af tyngdekraften $F_g$ samt en opadrettet kraft (opdrift) $F_o$, hvor opdriften, svarer til vægten af den fortrængte væske, $m_for$, dette under forudsætning at væsken ikke er i bevægelse. 
+Ved at nedsænke et legeme med en kendt masse og volumen, kan en væskes densitet bestemmes. Når væskens densitet kendes, kan volumen bestemmes af et hvilket som helst legeme såfremt det nedsænkes i den samme væske, under samme forhold.(Fishbane et al. 1996) 
+
+Når et legeme flyder højt, som i figur \vref{fig:arki_fop} gælder fælgende forudsætniger: 
+%
+\begin{equation} 
+ V^\prime< V
+\end{equation}
+% 
+% 
+\begin{equation} 
+ F_o=\rho_v*V^\prime=F_g=\rho*V
+\end{equation}
+% 
+% 
+\begin{equation} 
+ \frac{V^\prime}{V}=\frac{\rho}{\rho_v}
+\end{equation}
+% 
+Hvor $V^\prime$ er det fortrængte volumen, $F_g$ er gravitation, $F_o$ er opdrift, $V$ er objektets totale volumen, $\rho_v$ er væskens densitet, og den totale kraft der påvirker objektet $F_{tot}=0$. 
+%
+\begin{figure}
+\centering
+\input{Ffloat}
+\caption{Legeme der flyder-$F_{tot}=op$}
+\label{fig:arki_fop}
+\end{figure}
+%
+For et legeme der flyder i overfladen som vist på figur \vref{fig:arki_foverflade}, gælder følgende principper:
+% 
+\begin{equation}
+V^\prime=V
+\end{equation}
+%
+% 
+\begin{equation}
+\rho=\rho_v
+\end{equation}
+% 
+Hvor de to volumener og densitet er ens, og $F_{tot}=0$.
+% 
+% 
+\begin{figure}
+\centering
+\input{fbarley}
+\caption{Legeme nedsunken i væske - $F_{tot}=0$}
+\label{fig:arki_foverflade}
+\end{figure}
+%
+% 
+Når objektet synker, eller er fuldstendig neddykket som vist på figur \vref{fig:arki_fdown} gælder følgende forudsætninger:
+
+% 
+\begin{equation}
+V^\prime=V
+\end{equation}
+% 
+% 
+\begin{equation}
+\rho>\rho_v
+\end{equation}
+% 
+Volumen af den neddykede objekt er det samme som volumen af den fortrængte væske, densiteten af objektet er større en densiteten af væsken, hvilket medfører at objektet synker (Fishbane et al. 1996). 
+%
+\begin{figure}
+\centering
+\input{Fdown}
+\caption{Legeme der synker-$F_{tot}=ned$}
+\label{fig:arki_fdown}
+\end{figure}
+%

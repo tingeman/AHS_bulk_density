@@ -1,0 +1,185 @@
+\chapter{Resultater}
+I dette afsnit bliver resultaterne for klasifikation, volumen beregninger samt densitet præsenteret. Volumenberegnignerne er lavet ved tre forskellige metoder der bliver holdt op mod hinanden. Fra struktureret lys er der beregnet volumen af permafrost kerner ved HP software samt et python-modul. De kalkulerede volumner fra scanningen, sammenholdes med volumen fra akrimedes princip.
+
+\section{Visuel - klassifikation}
+Den visuelle klassifikation er udført ihh. til standarden:AsTM D4083-89. Resultatet af den visuelle klassifikationen kan ses i tabel \vref{tab:klas_perma}. 
+%
+\begin{table}
+  \centering
+  \topcaption{Klassifikation af permafrostkerner, Prøve, Diameter på kerne, kernens dybde (meter under terreng), betegnelse og kommentar til kernen.}
+  \label{tab:klas_perma}
+  \begin{tabular}{l c l l l}
+  \toprule
+ \multicolumn{1}{l}{Prøve} & 	\multicolumn{1}{c}{Diameter$[cm]$} & \multicolumn{1}{l}{M.U.T} &	\multicolumn{1}{l}{Betegnelse} & \multicolumn{1}{l}{Kommentar} \\
+\midrule
+\input{klasifikkation}
+\bottomrule
+  \end{tabular}
+  \end{table}
+%
+Det visuelle indtryk af prøverne er at de enkelte prøver har et højt isindhod, mens andre prøver har ingen synlig is. Prøverne bærer preg af at have meget ens konfraktion, især prøverne betegnet som Nbn.  
+\FloatBlock
+\section{Bulkdensitet- struktureret lys og Archimedes princip}
+Enkelte prøveemner indeholder meget is, der påvirker tætheden af punktskyen, hvilket medfører et "hull" i punktskyen, det fører til at afstanden mellem triangulerings punkterne. Ved en stor afstand mellem triangulerings punkterne kan meshet af den endelige model blive unøjagtig. 
+I det følgende bliver der fokuseret på de to referenceemner, samt de fire prøver der bulkdensiteten er beregnet, for både archimedes princip og 3D scanning ved de tre rotationsvinkler 45, 60 0g 72 -grader. 
+
+\subsection{Struktureret lys}
+De to reference emner er blevet målt med skydelær, og sammenlignes med de beregnede volumner fra 3D scanning  
+ \begin{table}
+  \centering
+  \topcaption{Refferenceemner- terning og cylinder 2.}
+  \label{tab:ref_vol}
+  \begin{tabular}{l c D{.}{\pm}{5.5} D{.}{\pm}{5.4}| D{.}{\pm}{5.4} }
+  \toprule
+ \multicolumn{1}{l}{Prøve} & 	\multicolumn{1}{c}{Grader$[^{\circ}]$} & \multicolumn{1}{c}{Py[$cm^3$]} &	\multicolumn{1}{c}{HP[$cm^3$]} & \multicolumn{1}{c}{Målt[$cm^3$]} \\
+\midrule
+Terning & 45 & 123,20.1,06 & 123,33.1,66 & 124,22. 0,08 \\
+Cylinder 2 & 45 & 131,39 . 1,64 & 131,45.1,68 & 132,17.0,02\\
+  \bottomrule
+  \end{tabular}
+  \end{table}
+ %
+Resultaterne for referenceemnerne er har en lille variation, dog kan der ses at det beregnede volumen baseret på målinger  med skydelær er større en de beregnede volumener fra 3D scanning. Forskellen mellem på volumen mellem python scriptet og HP software er minimal. For beregning af de enkelte volumner for reference objekterne henvises der til bilag \vref{app:ref_obj_maalt} og for de enkelte volumener beregnet fra 3D scan henvises der til bilag \vref{app:3d_scan_vol} enkelte volumner.
+%
+% \begin{table}
+%  \centering
+%  \topcaption{Prøve\-lab Nr., rotationsvinkel og volumen $cm^3$,  kærner fra Ilulissat.}
+%  \label{tab:45_grader}
+%  \begin{tabular}{l c D{.}{\pm}{5.5} D{.}{\pm}{5.4}  }
+%  \toprule
+%  & 	\multicolumn{1}{c}{Grader$[^{\circ}]$} & \multicolumn{1}{c}{Py[$cm^3$]} &	\multicolumn{1}{c}{HP[$cm^3$]} \\
+%  \midrule
+%  \input{volumen_45}
+%  \bottomrule
+%  \end{tabular}
+%  \end{table}
+%
+% \label{tab:delta_vol}
+% \begin{table}
+% \centering
+% \caption{Gennemsnits volumen samt forskel i volumen ved de to programmer, beregnet ved $V_{HP}- V_{Py}$}
+% \begin{tabular} {l c D{.}{,}{3.2} D{.}{,}{3.2} D{.}{,}{3.2} l}
+% \toprule
+% \multicolumn{1}{l}{Prøve} &\multicolumn{1}{c}{Vinkel} & \multicolumn{2}{c}{Volumen} & \multicolumn{1}{c}{$\Delta$ Volumen}\\
+% \multicolumn{1}{l}{Boring\_lab. Nr.} & \multicolumn{1}{c}{$[^{\circ}]$} & \multicolumn{1}{c}{Python $[cm^3]$} & \multicolumn{1}{c}{HP $[cm^3]$} & \multicolumn{1}{c}{$[cm^3]$} & \multicolumn{1}{c}{Kommentar}\\
+% \cmidrule(r){1-1} \cmidrule(lr){2-2}	\cmidrule(lr){3-3} \cmidrule(lr){4-4} \cmidrule(lr){5-5} \cmidrule(lr){6-6}
+
+% \input{delta_v_red}
+% \bottomrule
+% \end{tabular}
+% \end{table}
+
+
+
+%
+% \begin{table}
+%  \centering
+%  \topcaption{Prøve\-lab Nr., rotationsvinkel og volumen $cm^3$,  kærner fra Ilulissat.}
+%  \label{tab:60_grader}
+%  \begin{tabular}{l c D{.}{\pm}{5.5} D{.}{\pm}{5.4}  }
+%  \toprule
+% \multicolumn{1}{l}{Prøve} & 	\multicolumn{1}{c}{Grader$[^{\circ}]$} & \multicolumn{1}{c}{Py[$cm^3$]} &	\multicolumn{1}{c}{HP[$cm^3$]} \\
+%  \midrule
+%  \input{volumen_60}
+%  \bottomrule
+%  \end{tabular}
+%  \end{table}
+%
+
+% Her står der også noget smart
+
+%
+% \begin{table}
+%  \centering
+%  \topcaption{Prøve\-lab Nr., rotationsvinkel og volumen $cm^3$,  kærner fra Ilulissat.}
+%  \label{tab:72_grader}
+%  \begin{tabular}{l c D{.}{\pm}{5.5} D{.}{\pm}{5.4}  }
+%  \toprule
+% \multicolumn{1}{l}{Prøve} & 	\multicolumn{1}{c}{Grader$[^{\circ}]$} & \multicolumn{1}{c}{Py[$cm^3$]} &	\multicolumn{1}{c}{HP[$cm^3$]} \\
+%  \midrule
+%  \input{volumen_72}
+%  \bottomrule
+%  \end{tabular}
+%  \end{table}
+% %
+
+% \begin{table}
+%  \centering
+%  \topcaption{Volumen ved Arkimedes princip,  kærner fra Ilulissat.}
+%  \label{tab:vol_arkimedes}
+%  \begin{tabular}{l D{.}{\pm}{5.5}}
+%  \toprule
+% \multicolumn{1}{l}{Prøve} & \multicolumn{1}{c}{Volumen[$cm^3$]} \\
+%  \midrule
+%  \input{vol_arki}
+%  \bottomrule
+%  \end{tabular}
+%  \end{table}
+%
+\paragraph{Densitet - 3D scanning og Archimedes princip}
+Til sammenligning af resultater ses der udelukkende på bulkdensiteten $\rho_b$, for volumen og masse data henvises der til bilag \vref{app:scan} for 3D scanning, samt bilag \href{app:arki_calc} for archimedes.  
+
+Bulkdensiteterne for 3D scanning angives som middelværdien $\pm$ en spredning. 
+\noindent De beregnede bulkdensiteter for Archimedes angives som middelværdi $\pm$ standardafvigelse. 
+I tabel \vref{tab:dens_B02} er de beregnede densiteter for Python-script, HP software samt forsøg udført ved Archimedes princip.
+For prøve $B16002-5B$ er forskellen mellem den største og den mindste bulk densitet beregnet ud fra 3D scanning $0,02$ $[g/cm^3]$, og forskellen mellem 3D scanning og Archimedes er op til $0,07$ $[g/cm^3]$. 
+%
+\begin{table}
+ \centering
+ \topcaption{Prøve B16002 - 5B, densitet beregnet fra de tre rotationvinkler.}
+ \label{tab:dens_B02}
+ \begin{tabular}{l c D{.}{\pm}{5.5} D{.}{\pm}{5.4}| D{.}{\pm}{5.5}}
+ \toprule
+ \multicolumn{1}{l}{Prøve} & 	\multicolumn{1}{c}{Grader$[^{\circ}]$} & \multicolumn{1}{c}{Py[$g/cm^3$]} &	\multicolumn{1}{c}{HP[$g/cm^3$]} & \multicolumn{1}{c}{Archimedes[$g/cm^3$]} \\
+ \midrule
+ \input{pb_02_red}
+ \bottomrule
+ \end{tabular}
+ \end{table}
+%
+For prøve B16004\_3F er bulkdensiteten for 3D scanning ens, forskellen på $0,02$ $[g/cm^3]$ for bulkdensitet mellem archimedes og 3d scanning er minimal, se tabel \vref{tab:dens_B04}.  
+%
+\begin{table}
+ \centering
+ \topcaption{Prøve B16004 - 3F, densitet beregnet fra de tre rotationvinkler.}
+ \label{tab:dens_B04}
+ \begin{tabular}{l c D{.}{\pm}{5.5} D{.}{\pm}{5.4}| D{.}{\pm}{5.4} }
+ \toprule
+\multicolumn{1}{l}{Prøve} & \multicolumn{1}{c}{Grader$[^{\circ}]$} & \multicolumn{1}{c}{Py[$g/cm^3$]} &	\multicolumn{1}{c}{HP[$g/cm^3$]} & \multicolumn{1}{c}{Archimedes[$g/cm^3$]} \\
+ \midrule
+ \input{pb_04_red}
+ \bottomrule
+ \end{tabular}
+ \end{table}
+%
+For prøve B16012\_7D er den største forskel mellem arkimedes og 3d scanning $0,04$ $[g/cm^3]$, se tabel \vref{tab:dens_B12} forskellen i densitet mellem de forskellige rotationsvinkel er ubetydelig.
+
+%
+\begin{table}
+ \centering
+ \topcaption{Prøve B16012 - 7D, densitet beregnet fra de tre rotationvinkler.}
+ \label{tab:dens_B12}
+ \begin{tabular}{l c D{.}{\pm}{5.5} D{.}{\pm}{5.4}| D{.}{\pm}{5.4} }
+ \toprule
+\multicolumn{1}{l}{Prøve} & \multicolumn{1}{c}{Grader$[^{\circ}]$} & \multicolumn{1}{c}{Py[$g/cm^3$]} &	\multicolumn{1}{c}{HP[$g/cm^3$]} & \multicolumn{1}{c}{Archimedes[$g/cm^3$]} \\
+ \midrule
+ \input{pb_12_red}
+ \bottomrule
+ \end{tabular}
+ \end{table}
+%
+For prøve B16019T\_8F er forskellen mellem den højeste og laveste beregnede densitet $0,01$ $[g/cm^3]$, der kan ikke siges at være forskel på 3D scan og archimedes forsøg, se tabel \vref{tab:dens_B19T}. 
+%
+\begin{table}
+ \centering
+ \topcaption{Prøve B16019T- 3F, densitet beregnet fra de tre rotationvinkler.}
+ \label{tab:dens_B19T}
+ \begin{tabular}{l c D{.}{\pm}{5.5} D{.}{\pm}{5.4}| D{.}{\pm}{5.4} }
+ \toprule
+\multicolumn{1}{l}{Prøve} & 	\multicolumn{1}{c}{Grader$[^{\circ}]$} & \multicolumn{1}{c}{Py[$g/cm^3$]} &	\multicolumn{1}{c}{HP[$g/cm^3$]} & \multicolumn{1}{c}{Archimedes[$g/cm^3$]} \\
+ \midrule
+ \input{pb_19_red}
+ \bottomrule
+ \end{tabular}
+ \end{table}
+%

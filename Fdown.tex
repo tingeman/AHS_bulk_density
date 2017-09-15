@@ -1,0 +1,47 @@
+%%%% BEGIN DOCUMENT
+%\begin{document}
+%
+%
+%
+%
+
+\begin{tikzpicture}
+
+%%%%------------Prøve----------------%%	
+\draw[red, ultra thick, pattern=north east lines, pattern color=gray] (1.0,-1) circle [radius=0.5] ;
+% \draw [red, ultra thick] (1.0,1.5) circle [radius=0.5]		;
+\node [right] at (4.0,-1) {Prøveemne}						;
+\draw [->] (3.9,-1) -- (1.7,-1)								;
+\node [left] at (0.25,-0.4) {$\mathbf{{F}_{o}}$}			;
+\draw [ultra thick][->] (0.4,-0.9)--(0.4,-0.1)				;
+\node [left] at (0.25,-1.4) {$\mathbf{{F}_{g}}$}			;
+\draw [ultra thick][->] (0.4,-1.1)--(0.4,-1.9)				;
+
+%%%%------------Beholder Isobar----------------%%	
+\draw [black, ultra thick]	(-0.5,0.5) -- (-0.5,-2.5)	 		;	
+\draw [black, ultra thick]	(2.5,0.5) -- (2.5,-2.5)	 			;
+\draw [black, ultra thick]	(-0.5,-2.5) -- (2.5,-2.5)	 		;
+% \node at (1.0,-1.0) {Isopar} ;
+\node [right] at (4.0,-1.5){Beholder}			 ;
+\draw [->] (3.9, -1.5) -- (2.7,-1.5)							 ;
+
+% {$\mathbf{M}_{ji}$} (j)
+
+%%%-------------Kurve-------------%%%
+
+%  \draw[dashed, thick, blue] 
+% 	(-0.5,0) -- (2.5,0)	;
+ \draw[ultra thick,blue] 
+ (-0.5,0.0) -- (2.5,0.0)	;
+ \node [right] at (4.0,-2) {Væske}						;
+\draw [->] (3.9,-2) -- (2.2,-2)								;
+
+
+
+%%%---------- Hjelpe linjer ------------%%%
+
+%    \draw [help lines] (-5,-5) grid (5,5);
+%    \draw [help lines, step = 2,ultra thick] (-5,-0) grid (5,0);
+%    \draw [help lines, step = 2,ultra thick] (-0,-5) grid (0,5);
+%%%%%
+\end{tikzpicture}

@@ -1,5 +1,146 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
+\documentclass[11pt,a4paper,danish,twoside]{memoir} 
+% Skabelon af DTU's LaTeX support gruppe, v20090423
+% --------------------------------
+\title{Specialkursus}
+% --------------------------------
+\usepackage[utf8]{inputenc} % Skal passe til editorens indstillinger
+\usepackage[danish]{babel} % danske overskrifter
+\usepackage{tocvsec2}	
+\usepackage[T1]{fontenc} % fonte (output)
+\usepackage[table]{xcolor} % farver i tabeller
+\usepackage[bottom=4cm]{geometry}
+\usepackage{lmodern} % vektor fonte
+\usepackage{lipsum} % fyld-tekst
+\usepackage{varioref} % referencer
+\usepackage{url}	% håndtering af web-adresser
+\usepackage{booktabs} % pæne tabeller
+\usepackage{topcapt} % captions til tabeller
+\usepackage{threeparttable}	% tabel-noter
+\usepackage[referable]{threeparttablex} % tabel-noter i longtables
+\usepackage{longtable}	% tabeller over flere sider
+\usepackage{rotating}
+\usepackage{lscape}
+\usepackage{multirow} % fletning af rækker i tabeller
+\usepackage{dcolumn} % justering af kolonner
+\usepackage{graphicx} % indsættelse af billeder
+\usepackage[export]{adjustbox} % rammer om billeder
+\usepackage{tikz} % tegn på billeder
+\usepackage{pgfplots}
+\usepackage[round]{natbib}
+\usepackage{gensymb} % celcius og grader
+\usepackage{amsmath} % celcius
+\usepackage{siunitx} % vinkler
+\usepackage[url]{dk-bib}
+\usepackage{titlesec}
+\usepackage{wallpaper}
+\usepackage{caption}	%	Justering af figur-tekster
+% \usepackage[3D]{movie15} % 3D illustration i pdf-format
+\usepackage{subcaption} 
+\usepackage[final]{pdfpages} % inkludere pdf filer
+%\usepackage{hyperref}
+\usepackage{textcomp} % bla. celcius
+\usetikzlibrary{patterns} % muligheder for mønstre i tikz
+\titlespacing{\paragraph}{0pt}{15pt}{.4em}[]
+%% Make \cite default to \citep instead
+\let\cite\citep
+\pgfplotsset{compat=newest}
+\let\vref\ref
+
+\hyphenation{Si-mon-sen}
+
+% -------------------------	
+\settocdepth{section} % justering af indholdsfortegnelse
+\setsecnumdepth{subsection}
+\maxsecnumdepth{subsection}
+% -------------------------
+\usepackage{chngcntr}	% skift nummerering af tabeller og figurer i appendix
+\graphicspath{{./billeder/}} % stivej til bibliotek med figurer
+
+\usepackage[colorinlistoftodos]{todonotes}	% pakke til noter
+%\usepackage[disable]{todonotes}	% fjern todos fra PDF
+% todo-farver
+\definecolor{anders}{RGB}{255,255,0}
+\definecolor{darkgreen}{RGB}{0,153,0}
+\definecolor{forslag}{RGB}{100,150,250}
+
+%	VREF
+\vrefwarning
+
+\usepackage{mathtools} % matematik - understøtter muligheden for at bruge \eqref{}https://preview.overleaf.com/public/ndkwnwsgspxv/images/8801bcf52a084e52bb85dcbdcf72354cc80de42c.jpeg
+\usepackage{siunitx}
+\sisetup{per-mode=symbol-or-fraction}
+\usepackage{icomma}
+\usepackage[plainpages=false,pdfpagelabels,pageanchor=false]{hyperref} % aktive links
+\usepackage{memhfixc}% rettelser til hyperref
+
+\usepackage{enumitem}
+\setlist[enumerate]{label*=\arabic*.}	% 
+
+\usepackage[framemethod=tikz]{mdframed}
+\newmdenv[tikzsetting={draw=black,fill=white,fill opacity=0.7},backgroundcolor=none]{myenvironment}
+
+% ------------------------------------------
+%	Lay-out
+% --------------------------------------
+%%	Pagestyle
+%\usepackage{fancyhdr}
+\pagestyle{companion}
+
+%	Chapterstyle
+\chapterstyle{section}
+
+%	Figurtekst
+\captionsetup{font=small,labelfont=bf}
+%format = hang
+%textfont=sf
+% ------------------------------------------
+
+
+% ------------------------------------------
+% Kompiler kun de kapitler du arbejder med.
+% --------------------------------------
+% \includeonly{	
+%}
+% ------------------------------------------
+
 \begin{document}
-(Type your content here.)
+\frontmatter % sidenumre som romertal
+\pagenumbering{Roman}
+% \maketitle  % bruges hvis man ikke har sin egen forside
+ 
+
+% \include{resume}
+
+%\listoftodos[To do Notes]
+\include{forside}
+\include{forord}
+\chapterstyle{reparticle}
+\tableofcontents*
+\newpage
+\listoffigures*
+\newpage
+\listoftables*
+\chapterstyle{section}
+
+\mainmatter % arabiske sidenumre
+
+% \include{forside}
+\include{indledning}
+\include{teori}
+% \include{arkimedesops}
+\include{metode}
+\include{resultater}
+\include{diskussion}
+\include{forslag_til_videre}
+\include{konklusion}
+\include{litteratur}
+% \include{bib}
+\include{appendix_kode}
+\appendix % bogstaver som kapitelnumre
+\chapterstyle{reparticle} 
+\pagestyle{plain}
+\renewcommand{\appendixtocname}{Bilag} % Ændre navn til indholdsfortegnelse
+\addappheadtotoc % Tilføj 'Bilag' til indholdsfortegnelsen
+%\include{appendiks-kode}
 \end{document}
+
